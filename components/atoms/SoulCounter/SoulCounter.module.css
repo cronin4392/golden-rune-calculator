@@ -3,6 +3,7 @@
   margin-right: auto;
   text-align: left;
   border-spacing: 0.5rem;
+  min-width: var(--table-min-width);
 }
 
 .table tr {
@@ -29,17 +30,15 @@
 }
 
 .table td {
-  padding: 0.25rem;
-}
-
-.label {
-    padding-right: 8rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .controls {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .button {

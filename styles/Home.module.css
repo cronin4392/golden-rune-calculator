@@ -10,10 +10,6 @@
   margin: 0 !important;
 }
 
-.fixed {
-  position: absolute;
-}
-
 .spaced > * {
   margin: 0.5em;
 }

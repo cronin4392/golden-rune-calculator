@@ -1,0 +1,34 @@
+.StickyFooter {
+  background: linear-gradient(
+    0deg,
+    rgb(16, 19, 15) 0%,
+    rgb(16, 19, 15, 1) 80%,
+    rgb(16, 19, 15, 0) 100%
+  );
+  position: sticky;
+  bottom: 0;
+  margin-left: calc(-1 * var(--site-padding));
+  margin-right: calc(-1 * var(--site-padding));
+  padding: 0.5rem var(--site-padding);
+  display: flex;
+  justify-content: center;
+}
+
+.Container {
+  min-width: var(--table-min-width);
+  display: flex;
+  gap: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Button {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  font: inherit;
+  padding: 0.4rem 1rem;
+  text-shadow: inherit;
+}

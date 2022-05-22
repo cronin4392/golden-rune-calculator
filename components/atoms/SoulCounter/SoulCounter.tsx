@@ -1,8 +1,8 @@
-import styles from "../../../styles/Home.module.css";
 import SCStyles from "./SoulCounter.module.css";
+import type { SoulCounterReturn as Props } from "./useSoulCounter";
 import { allRunes } from "../../../constants/runes";
 import { runeTotal } from "../../../utils/calculate";
-import type { SoulCounterReturn as Props } from "./useSoulCounter";
+import StickyFooter from "../StickyFooter";
 
 export default ({
   increase,
@@ -12,12 +12,9 @@ export default ({
   setExactCount,
 }: Props) => (
   <>
-    <div>
-      <button onClick={reset}>reset</button>
-    </div>
     <table className={SCStyles.table}>
       <tbody>
-        {allRunes.map(({ id, label, soulsGiven }) => {
+        {allRunes.map(({ id, label }) => {
           const totalRunes = runeCount.find((r) => r.id === id)?.count;
           return (
             <tr key={id}>
@@ -26,15 +23,15 @@ export default ({
               </td>
               <td>
                 <div className={SCStyles.controls}>
-                  <button className={SCStyles.button} onClick={increase(id)}>
-                    +
-                  </button>
                   <button
                     className={SCStyles.button}
                     disabled={!totalRunes}
                     onClick={decrease(id)}
                   >
                     -
+                  </button>
+                  <button className={SCStyles.button} onClick={increase(id)}>
+                    +
                   </button>
                   <input
                     className={SCStyles.input}
@@ -49,6 +46,6 @@ export default ({
         })}
       </tbody>
     </table>
-    <h2>total: {runeTotal(runeCount)}</h2>
+    <StickyFooter total={runeTotal(runeCount)} reset={reset} />
   </>
 );
